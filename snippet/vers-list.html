@@ -1,0 +1,49 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="vers-service.html">
+<link rel="import" href="vers-card.html">
+
+<polymer-element name="vers-list" attributes="show">
+  <template>
+    <style>
+      :host { display: block; width: 100%; }
+      vers-card { margin-bottom: 30px; }
+    </style>
+
+    <!-- add markup here -->
+    <vers-service id="service" verses="{{verses}}"></vers-service>
+
+    <div layout vertical center>
+      <template repeat="{{vers in verses}}">
+
+      <!--
+
+        vers.book
+        vers.chapters
+        vers.vers
+        * vers.text
+        * vers.image
+        vers.rating.up/down
+      -->
+        <vers-card
+            favorite="{{vers.favorite}}"
+            on-favorite-tap="{{handleFavorite}}"
+            hidden?="{{show == 'favorites' && !vers.favorite}}">
+          <vers>{{vers.text}}</vers>
+          <scripture>{{vers.book}} {{vers.chapter}}, {{vers.vers}}</scripture>
+        </vers-card>
+      </template>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      handleFavorite: function(event, detail, sender) {
+        var vers = sender.templateInstance.model.vers;
+        this.$.service.setFavorite(vers.uid, vers.favorite);
+      }
+    });
+  </script>
+
+</polymer-element>

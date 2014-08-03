@@ -1,0 +1,55 @@
+[
+  {
+    "uid": 16659,
+    "book": "Sprüche",
+    "chapter": 10,
+    "vers": 2,
+    "text" : "Unrecht Gut hilft nicht; aber Gerechtigkeit errettet vor dem Tode.",
+    "image" : "images/avatar-01.svg",
+    "rating": {
+      "up": 99,
+      "down": 2
+    },
+    "favorite": false
+  },
+  {
+    "uid": 16660,
+    "book": "Sprüche",
+    "chapter": 10,
+    "vers": 3,
+    "text" : "Der HERR l\u00e4\u00dft die Seele des Gerechten nicht Hunger leiden; er st\u00f6\u00dft aber weg der Gottlosen Begierde.",
+    "image" : "images/avatar-02.svg",
+    "rating": {
+      "up": 99,
+      "down": 2
+    },
+    "favorite": false
+  },
+  {
+    "uid": 16661,
+    "book": "Sprüche",
+    "chapter": 10,
+    "vers": 4,
+    "text" : "L\u00e4ssige Hand macht arm; aber der Flei\u00dfigen Hand macht reich.",
+    "image" : "images/avatar-03.svg",
+    "rating": {
+      "up": 99,
+      "down": 2
+    },
+    "favorite": false
+  },
+  {
+    "uid": 16662,
+    "book": "Sprüche",
+    "chapter": 10,
+    "vers": 5,
+    "text" : "Wer im Sommer sammelt, der ist klug; wer aber in der Ernte schl\u00e4ft, wird zu Schanden.",
+    "image" : "images/avatar-04.svg",
+    "rating": {
+      "up": 99,
+      "down": 2
+    },
+    "favorite": false
+  }
+
+]

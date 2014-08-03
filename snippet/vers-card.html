@@ -1,0 +1,52 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="../bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="vers-card">
+  <template>
+    <style>
+      :host { display: block; position: relative; background-color: white; padding: 20px 20px 10px; width: 100%; font-weight: 300; }
+      .card-header { margin-bottom: 10px; }
+      polyfill-next-selector { content: '.card-header vers'; }
+      .card-header ::content vers { margin: 0; font-size: 1.4rem; text-align: center; width: 100%; padding-bottom: 20px; }
+      polyfill-next-selector { content: '.card-header scripture'; }
+      .card-header ::content scripture { font-size: 0.9rem; text-align: center; }
+      core-icon-button { position: absolute; top: 3px; right: 3px; fill: #636363; }
+      :host([favorite]) core-icon-button { fill: #da4336; }
+    </style>
+
+    <!-- CARD CONTENTS GO HERE -->
+    <div class="card-header" vertical layout>
+      <content select="vers"></content>
+      <content select="scripture"></content>
+    </div>
+    <paper-shadow id="myShadow" z="1"></div>
+
+    <!--
+    <core-icon-button
+      id="favicon"
+      icon="favorite"
+      on-tap="{{favoriteTapped}}">
+    </core-icon-button>
+  -->
+
+    <content></content>
+
+  </template>
+
+  <script>
+    Polymer({
+      publish: {
+        favorite: {
+          value: false,
+          reflect: true
+        }
+      },
+      favoriteTapped: function(event, detail, sender) {
+        this.favorite = !this.favorite;
+        this.fire('favorite-tap');
+      }
+    });
+  </script>
+
+</polymer-element>
