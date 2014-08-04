@@ -7,7 +7,15 @@
   <template>
     <style>
       :host { display: block; width: 100%; }
-      vers-card { margin-bottom: 30px; }
+      vers-card { margin-bottom: 66px; }
+
+      /* Vers Decoration */
+      .fancy { line-height: 0.5; text-align: center; }
+      .fancy span { display: inline-block; position: relative; }
+      .fancy span:before,
+      .fancy span:after { content: ""; position: absolute; height: 5px; border-bottom: 1px solid #c0c0c0; border-top: 1px solid #c0c0c0; top: 0; width: 50px; }
+      .fancy span:before { right: 100%; margin-right: 15px; }
+      .fancy span:after { left: 100%; margin-left: 15px; }
     </style>
 
     <!-- add markup here -->
@@ -29,8 +37,16 @@
             favorite="{{vers.favorite}}"
             on-favorite-tap="{{handleFavorite}}"
             hidden?="{{show == 'favorites' && !vers.favorite}}">
-          <vers>{{vers.text}}</vers>
-          <scripture>{{vers.book}} {{vers.chapter}}, {{vers.vers}}</scripture>
+          <vers>
+            <paper-focusable class="focusable-active">{{vers.text}}</paper-focusable>
+          </vers>
+          <scripture>
+            <p class="fancy">
+              <span>
+                {{vers.book}} {{vers.chapter}}, {{vers.vers}}
+              </span>
+            </p>
+          </scripture>
         </vers-card>
       </template>
     </div>
